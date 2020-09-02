@@ -16,21 +16,21 @@
           <div class="col">
             <ul class="nav nav-pills nav-fill nav-center">      
               <li class="nav-item nav-item-hover">
-                <a class="nav-link nav-text nav-link-hover" href="#">Информация</a>
+                <a class="nav-link nav-text nav-link-hover" href="#info">Информация</a>
               </li>
               <li class="nav-item nav-item-hover">
-                <a class="nav-link nav-text nav-link-hover" href="#">Вакансии</a>
+                <a class="nav-link nav-text nav-link-hover" href="#vacancies">Вакансии</a>
               </li>
               <li class="nav-item nav-item-hover">
-                <a class="nav-link nav-text nav-link-hover" href="#">Партнеры</a>
+                <a class="nav-link nav-text nav-link-hover" href="#partners">Партнеры</a>
               </li>
               <li class="nav-item nav-item-hover">
-                <a class="nav-link nav-text nav-link-hover" href="#">Контакты</a>
+                <a class="nav-link nav-text nav-link-hover" href="#contacts">Контакты</a>
               </li>
             </ul>
         </div>
       </div>
-      <div class="row block">
+      <div id="info" class="row block">
         <h2 class="about_us-heading mt-5">Команда Dexsys IT сегодня</h2>
         <div class="container cards-about_us mt-5">            
             <div class="card m-3 card-size" style="width: 18rem;">
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div id="vacancies" class="row">
         <h2 class="vacancies-heading mt-5">Вакансии</h2>
     </div>
     <div class="row row-media">
@@ -146,8 +146,9 @@
                   </div>
             </div>
     </div>
-    <div class="row block">
+    <div class="row block" id="partners">
         <div class="container">
+            <h2 class="vacancies-heading mt-5 mb-5 about_us-heading">Партнеры</h2>
         <ul class="nav nav-tabs" id="myTab1" role="tablist">
             <li class="nav-item" role="presentation">
               <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home_credit" role="tab" aria-controls="home" aria-selected="true">Home credit</a>
@@ -191,6 +192,33 @@
                 </div>
             </div>
           </div>
+        </div>
+    </div>
+    <div class="row" id="contacts">
+        <h2 class="vacancies-heading mt-5 mb-5">Контакты</h2>
+    </div>
+    <div class="row row-media">
+        <div class="col mb-5">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="Name"class="form-control" id="form_name" placeholder="Name (Required)" required="">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="form_email" aria-describedby="emailHelp" placeholder="Email (Required)" required="">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <textarea id="form-description" class="form-control" name="question" cols="30" rows="10" placeholder="Describe your questions in detail..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        <div class="col">
+            <ul>
+                <li><a href="tel:+73412561805">+7 (3412) 56-18-05</a></li>
+                <li><a href="mailto:amezenceva@dexsys.ru">amezenceva@dexsys.ru</a></li>
+                <li><a href="mailto:emenchikova@dexsys.ru">emenchikova@dexsys.ru</a></li>
+            </ul>
         </div>
     </div>
     </div> 
