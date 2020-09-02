@@ -39,7 +39,7 @@ html{
 .card-text{
     text-align: center;
 }
-.about_us{
+.block{
     display: block !important;
 }
 .about_us-heading{
@@ -55,4 +55,11 @@ html{
 }
 .vacancies-heading{
     margin: auto;
+}
+.display-flex{
+    display: flex;
+}
+.partners-img{
+    width: 100%;
+    height: auto;
 }
