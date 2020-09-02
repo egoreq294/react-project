@@ -1,2 +1,0 @@
-# zvorygin
-telegram: @Egoreq
