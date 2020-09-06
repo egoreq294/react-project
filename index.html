@@ -202,16 +202,21 @@
         <div class="col mb-5">
             <form>
                 <div class="form-group">
-                    <input type="text" name="Name"class="form-control" id="form_name" placeholder="Name (Required)" required="">
+                    <input type="text" name="Name"class="form-control" id="form_name" placeholder="Имя" required="">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" id="form_email" aria-describedby="emailHelp" placeholder="Email (Required)" required="">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  <input type="email" class="form-control" id="form_email" aria-describedby="emailHelp" placeholder="Email" required="">
+                  <small id="emailHelp" class="form-text text-muted">Ваш email останется в тайне</small>
                 </div>
                 <div class="form-group">
                     <textarea id="form-description" class="form-control" name="question" cols="30" rows="10" placeholder="Describe your questions in detail..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+
+                 <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-invest" data-toggle="modal" data-target="#exampleModal">
+                  Инвестировать
+                </button>
               </form>
         </div>
         <div class="col">
@@ -222,8 +227,42 @@
             </ul>
         </div>
     </section>
-    </main>
-    </div> 
+    </main>    
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Инвестируйте в нас</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <input type="text" name="Name"class="form-control" id="form_name_invest" placeholder="Имя" required="">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="form_email_invest" aria-describedby="emailHelp" placeholder="Email" required="">
+              <small id="emailHelp" class="form-text text-muted">Ваш email останется в тайне</small>
+            </div>
+              <div class="form-group">                
+                <input type="number" name="sum" class="form-control" id="form_sum" placeholder="Сумма" required=''> 
+              </div>
+              <select class="select_menu form-control">
+                <option selected required=''>RUB</option>
+              </select>
+              <button type="submit" class="btn btn-primary mt-3">Отправить</button>
+            </form>
+            <div class="exchange_rate mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
