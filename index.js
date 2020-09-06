@@ -1,4 +1,4 @@
-async function getApi() {    
+async function getExchangeRates() {    
     let response = await fetch(`https://www.cbr-xml-daily.ru/daily_json.js`, { method: 'GET' });
     let exchangeRatesApi = await response.json();
     return exchangeRatesApi;
@@ -6,7 +6,7 @@ async function getApi() {
 
 
 async function makeSelect() {
-    let exchangeRatesApi = await getApi();
+    let exchangeRatesApi = await getExchangeRates();
     for(key in exchangeRatesApi.Valute){
         let option = document.createElement('option');
         option.setAttribute('class','select_item');
@@ -16,11 +16,14 @@ async function makeSelect() {
 }
 
 async function outputExchangeRates(currency){    
-    let exchangeRatesApi = await getApi();
+    let exchangeRatesApi = await getExchangeRates();
     document.querySelector('.exchange_rate').innerHTML='';
     for(key in exchangeRatesApi.Valute){
         if(currency == key){
-            document.querySelector('.exchange_rate').innerHTML = `Курс ${key}/RUB на ${formatDate(new Date(Date.parse(exchangeRatesApi.Date)))}: ` + exchangeRatesApi.Valute[key].Value;
+            document.querySelector(".exchange_rate").innerHTML =
+                `Курс ${key}/RUB на 
+                ${formatDate(new Date(Date.parse(exchangeRatesApi.Date)))}: ` +
+                exchangeRatesApi.Valute[key].Value;
         }
     }
 }
