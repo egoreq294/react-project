@@ -42,9 +42,9 @@ html{
 .block{
     display: block !important;
 }
-.about_us-heading{
+/*.about_us-heading{
     text-align: center;
-}
+}*/
 .nav-right{
     align-items: flex-start;
 }
@@ -53,8 +53,9 @@ html{
         display: block !important;
     }
 }
-.vacancies-heading{
+.section_header{
     margin: auto;
+    text-align: center;
 }
 .display-flex{
     display: flex;
