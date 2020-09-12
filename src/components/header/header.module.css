@@ -1,0 +1,37 @@
+.display_flex{
+    display: flex;
+}
+.nav_bar{
+    width: 50%;
+    flex-wrap: wrap;
+}
+.nav_bar_a{    
+    text-decoration: none;    
+}
+.nav_bar_a {    
+    color: white;
+    background-color: #007bff;
+    padding: 0.4em 0.8em;
+    border-radius: 10px;
+  } 
+  .nav_bar_a:hover {
+    color:#007bff;
+    background-color: white;
+    padding: 0.4em 0.8em;
+    border-radius: 10px;
+  }
+  .nav_bar_a:active {
+    
+  }
+.nav_bar_li{
+    margin: auto;   
+    list-style-type: none;
+    padding: 0 20px;
+}
+.logo{
+    width: 50%;
+}
+.logo_img{
+    display: block;
+    padding-left: 20px;
+}
