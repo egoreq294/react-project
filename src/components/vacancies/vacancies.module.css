@@ -1,0 +1,38 @@
+.vacancies {
+  display: flex;
+}
+.vacanciesNavbarUl {
+  display: block;
+  width: 100%;
+}
+.vacanciesNavbarElement {
+  margin: 25px 0;
+}
+.VacanciesNavbar {
+  width: 30%;
+}
+.VacanciesContent {
+  width: 70%;
+}
+.vacanciesInfos {
+  width: 70%;
+  margin: auto;
+}
+@media screen and (max-width: 965px) {
+  .vacancies {
+    display: block;
+  }
+  .VacanciesContent {
+    width: 100%;
+  }
+  .VacanciesNavbar {
+    width: 100%;
+  }
+  .vacanciesNavbarElement {
+    padding: 0;
+    text-align: center;
+  }
+  .vacanciesNavbarUl {
+    padding: 0;
+  }
+}
