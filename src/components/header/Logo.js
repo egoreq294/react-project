@@ -5,7 +5,12 @@ import logo from '../../assets/logo.png'
 function Logo(props){
     return( 
     <div className={styles.logo}>
-        <img className={styles.logo_img} src={logo} alt="logo" />
+        <p>
+            <a href="#header">
+                <img className={styles.logo_img} src={logo} alt="logo" />
+            </a>
+        </p>
+        
     </div>
     )
 }

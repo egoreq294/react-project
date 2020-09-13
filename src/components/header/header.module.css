@@ -10,18 +10,15 @@
 }
 .nav_bar_a {    
     color: white;
-    background-color: #007bff;
+    background: linear-gradient(#0003cc, #3898ff);
     padding: 0.4em 0.8em;
     border-radius: 10px;
   } 
   .nav_bar_a:hover {
-    color:#007bff;
-    background-color: white;
+    color:white;
+    background: linear-gradient(#3898ff, #0003cc);
     padding: 0.4em 0.8em;
     border-radius: 10px;
-  }
-  .nav_bar_a:active {
-    
   }
 .nav_bar_li{
     margin: auto;   
@@ -30,6 +27,7 @@
 }
 .logo{
     width: 50%;
+    border: none;
 }
 .logo_img{
     display: block;

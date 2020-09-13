@@ -1,13 +1,18 @@
 import React from 'react';
-import Header from './components/header/Header'
 import styles from './App.module.css'
+import Header from './components/header/Header'
+import CardSection from './components/cardField/CardSection';
+
 
 function App() {
   return (
     <div className={styles.wrapper}>
-      <header>
+      <header id='header'>
         <Header />
       </header>
+      <section id='cards'>
+        <CardSection />
+      </section>
     </div>
   );
 }
