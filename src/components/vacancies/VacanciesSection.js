@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../Title";
 import VacanciesContent from "./VacanciecContent";
-import VacanciesNavbar from "./VacanciesNavbar";
+import Navbar from "../Navbar";
 import styles1 from "../header/header.module.css";
 import styles from "./vacancies.module.css";
 
@@ -58,7 +58,7 @@ function VacanciesSection(props) {
       <Title text="Вакансии" />
       <div className={styles.vacancies}>
         <div className={styles.VacanciesNavbar}>
-          <VacanciesNavbar
+          <Navbar
             classesForUl={[styles.vacanciesNavbarUl]}
             classesForLi={[styles1.nav_bar_li, styles.vacanciesNavbarElement]}
             classesForA={[styles1.nav_bar_a]}

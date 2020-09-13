@@ -2,7 +2,7 @@ import React from "react";
 
 function NavBar(props) {
   return (
-    <ul className={[props.classesForUl].join(" ")}>
+    <ul className={props.classesForUl.join(" ")}>
       {props.navButtons.map((item) => (
         <li className={props.classesForLi.join(" ")} key={item[0]}>
           <a
