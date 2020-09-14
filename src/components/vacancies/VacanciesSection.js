@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Title";
-import VacanciesContent from "./VacanciecContent";
+import VacanciesContent from "./VacanciesContent";
 import Navbar from "../Navbar";
 import styles1 from "../header/header.module.css";
 import styles from "./vacancies.module.css";
@@ -43,18 +43,19 @@ const vacanciesContent = [
   },
 ];
 
-function VacanciesSection(props) {
+function VacanciesSection() {
   const [index, setIndex] = React.useState(0);
   function changeIndex(e) {
-    vacanciesContent.map((item) => {
+    vacanciesContent.find((item) => {
       if (item.vacancy === e.target.innerHTML) {
         setIndex(item.index);
       }
+      return false;
     });
   }
 
   return (
-    <React.Fragment>
+    <section id="vacancies">
       <Title text="Вакансии" />
       <div className={styles.vacancies}>
         <div className={styles.VacanciesNavbar}>
@@ -74,7 +75,7 @@ function VacanciesSection(props) {
           <VacanciesContent index={index} vacanciesContent={vacanciesContent} />
         </div>
       </div>
-    </React.Fragment>
+    </section>
   );
 }
 

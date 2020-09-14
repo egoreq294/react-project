@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./header.module.css";
 import logo from "../../assets/logo.png";
 
-function Logo(props) {
+function Logo() {
   return (
     <div className={styles.logo}>
       <p>

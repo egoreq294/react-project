@@ -31,12 +31,12 @@ const cardFieldInfos = [
   },
 ];
 
-function CardSection(props) {
+function CardSection() {
   return (
-    <React.Fragment>
+    <section id="cards">
       <Title text="Команда Dexsys IT сегодня" />
       <CardField cardObject={cardFieldInfos} />
-    </React.Fragment>
+    </section>
   );
 }
 

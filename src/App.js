@@ -1,24 +1,17 @@
 import React from "react";
-import styles from "./App.module.css";
 import Header from "./components/header/Header";
 import CardSection from "./components/cardSection/CardSection";
 import VacanciesSection from "./components/vacancies/VacanciesSection";
 
 function App() {
   return (
-    <div className={styles.wrapper}>
-      <header id="header">
-        <Header />
-      </header>
+    <React.Fragment>
+      <Header />
 
-      <section id="cards">
-        <CardSection />
-      </section>
+      <CardSection />
 
-      <section id="vacancies">
-        <VacanciesSection />
-      </section>
-    </div>
+      <VacanciesSection />
+    </React.Fragment>
   );
 }
 

@@ -3,9 +3,9 @@ import styles from "./header.module.css";
 import Logo from "./Logo";
 import Navbar from "../Navbar";
 
-function Header(props) {
+function Header() {
   return (
-    <div className={styles.display_flex}>
+    <header id="header" className={styles.display_flex}>
       <Logo />
       <Navbar
         classesForUl={[styles.display_flex, styles.nav_bar]}
@@ -18,7 +18,7 @@ function Header(props) {
           ["Контакты", "#contacts"],
         ]}
       />
-    </div>
+    </header>
   );
 }
 
