@@ -4,6 +4,7 @@ import VacanciesContent from "./VacanciesContent";
 import Navbar from "../Navbar";
 import styles1 from "../header/header.module.css";
 import styles from "./vacancies.module.css";
+import classNames from "classnames";
 
 const vacanciesContent = [
   {
@@ -60,9 +61,12 @@ function VacanciesSection() {
       <div className={styles.vacancies}>
         <div className={styles.VacanciesNavbar}>
           <Navbar
-            classesForUl={[styles.vacanciesNavbarUl]}
-            classesForLi={[styles1.nav_bar_li, styles.vacanciesNavbarElement]}
-            classesForA={[styles1.nav_bar_a]}
+            classesForUl={classNames(styles.vacanciesNavbarUl)}
+            classesForLi={classNames(
+              styles1.nav_bar_li,
+              styles.vacanciesNavbarElement
+            )}
+            classesForA={classNames(styles1.nav_bar_a)}
             changeIndex={changeIndex}
             navButtons={[
               ["Android-разработчик", "#android"],
