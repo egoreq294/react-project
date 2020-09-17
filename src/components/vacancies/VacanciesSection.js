@@ -6,58 +6,57 @@ import styles1 from "../header/header.module.css";
 import styles from "./vacancies.module.css";
 import classNames from "classnames";
 
+const DEXSYS_EMPLOYER = "1980984";
+
 function VacanciesSection() {
-  const [vacancies, setVacancies] = useState({});
-  const [index, setIndex] = useState("23780683");
+  const [vacancies, setVacancies] = useState();
+  const [selectedVacancy, setSelectedVacancy] = useState();
+
   useEffect(() => {
-    function getVacancies() {
-      fetch("https://api.hh.ru/vacancies?employer_id=1980984")
-        .then((response) => response.json())
-        .then((response) => setVacancies(response));
-    }
-    getVacancies();
+    fetch(`https://api.hh.ru/vacancies?employer_id=${DEXSYS_EMPLOYER}`)
+      .then((response) => response.json())
+      .then((responseObject) => {
+        setVacancies(responseObject);
+        setSelectedVacancy(responseObject?.items[0]);
+      });
   }, []);
 
-  function changeIndex(e) {
-    for (let key in vacancies.items) {
-      if (vacancies.items[key].name === e.target.innerHTML) {
-        setIndex(vacancies.items[key].id);
-        console.log(vacancies.items[key].id);
-      }
-    }
+  function handleSelect(element) {
+    const vacancyName = element.target.innerHTML;
+    setSelectedVacancy(vacancies.items.find((v) => v.name === vacancyName));
   }
 
-  if (Object.keys(vacancies).length !== 0) {
-    let navButtonsArray = [];
-    for (let key in vacancies.items) {
-      navButtonsArray.push([
-        vacancies.items[key].name,
-        "#" + vacancies.items[key].id,
-      ]);
-    }
-    return (
-      <section id="vacancies">
-        <Title text="Вакансии" />
-        <div className={styles.vacancies}>
-          <div className={styles.VacanciesNavbar}>
-            <Navbar
-              classesForUl={classNames(styles.vacanciesNavbarUl)}
-              classesForLi={classNames(
-                styles1.nav_bar_li,
-                styles.vacanciesNavbarElement
-              )}
-              classesForA={classNames(styles1.nav_bar_a)}
-              changeIndex={changeIndex}
-              navButtons={navButtonsArray}
-            />
-          </div>
-          <div className={styles.VacanciesContent}>
-            <VacanciesContent index={index} vacanciesContent={vacancies} />
-          </div>
+  if (!vacancies || !selectedVacancy) {
+    return null;
+  }
+
+  const navButtonsArray = vacancies.items.map((item) => [
+    item.name,
+    `#${item.id}`,
+  ]);
+
+  return (
+    <section id="vacancies">
+      <Title text="Вакансии" />
+      <div className={styles.vacancies}>
+        <div className={styles.VacanciesNavbar}>
+          <Navbar
+            classesForUl={classNames(styles.vacanciesNavbarUl)}
+            classesForLi={classNames(
+              styles1.nav_bar_li,
+              styles.vacanciesNavbarElement
+            )}
+            classesForA={classNames(styles1.nav_bar_a)}
+            changeIndex={handleSelect}
+            navButtons={navButtonsArray}
+          />
         </div>
-      </section>
-    );
-  } else return null;
+        <div className={styles.VacanciesContent}>
+          <VacanciesContent vacancy={selectedVacancy} />
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default VacanciesSection;
