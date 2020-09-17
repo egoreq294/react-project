@@ -4,6 +4,7 @@ import CardSection from "./components/cardSection/CardSection";
 import VacanciesSection from "./components/vacancies/VacanciesSection";
 import PartnersSection from "./components/partners/PartnersSection";
 import ContactSection from "./components/contacts/ContactSection";
+import HhWidget from "./components/hhWidget/HhWidget";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <PartnersSection />
 
       <ContactSection />
+
+      <HhWidget />
     </React.Fragment>
   );
 }
