@@ -35,4 +35,8 @@
   .vacanciesNavbarUl {
     padding: 0;
   }
+  .vacanciesInfos {
+    width: auto;
+    margin: 0 20px;
+  }
 }

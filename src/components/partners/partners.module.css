@@ -5,12 +5,11 @@
   margin: 0;
 }
 .nav_bar_ul_partners {
-  float: right;
+  justify-content: flex-end;
 }
 .content_div {
   display: flex;
-  float: left;
-  margin-top: 20px;
+  margin: 20px;
 }
 .partners_img {
   max-width: 100%;
@@ -27,13 +26,15 @@
     display: block;
   }
   .partners_img {
-    width: 70%;
+    width: auto;
     display: block;
     margin: auto;
+    padding: 0;
   }
   .partners_text {
-    width: 70%;
+    width: auto;
     margin: 20px auto;
+    padding: 0;
   }
   .nav_bar_li_partners {
     margin: 25px 0;
@@ -46,5 +47,6 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    justify-content: center;
   }
 }
