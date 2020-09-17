@@ -18,6 +18,12 @@
   width: 70%;
   margin: auto;
 }
+.content_text_span {
+  font-weight: bold;
+}
+.middle {
+  text-decoration: none;
+}
 @media screen and (max-width: 965px) {
   .vacancies {
     display: block;
