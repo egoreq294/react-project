@@ -3,7 +3,7 @@ import Navbar from "../Navbar";
 import PartnersContent from "./PartnersContent";
 import Title from "../Title";
 import classNames from "classnames";
-import style from "./partners.module.css";
+import styles from "./partners.module.css";
 import styleNavbar from "../header/header.module.css";
 
 import homecredit from "../../assets/homecredit.png";
@@ -50,22 +50,27 @@ function PartnersSection() {
 
   return (
     <section id="partners">
-      <Title text="Партнеры" />
-      <Navbar
-        classesForUl={classNames(style.display_flex, style.nav_bar_ul_partners)}
-        classesForLi={classNames(
-          styleNavbar.nav_bar_li,
-          style.nav_bar_li_partners
-        )}
-        classesForA={classNames(styleNavbar.nav_bar_a)}
-        navButtons={[
-          ["Home credit", "#homecredit"],
-          ["Турбозайм", "#turbo"],
-          ["Наш проект DexBee", "#dexbee"],
-        ]}
-        changeIndex={changeIndex}
-      />
-      <PartnersContent index={index} partnersContent={partnersContent} />
+      <div className={styles.content}>
+        <Title text="Партнеры" />
+        <Navbar
+          classesForUl={classNames(
+            styles.display_flex,
+            styles.nav_bar_ul_partners
+          )}
+          classesForLi={classNames(
+            styleNavbar.nav_bar_li,
+            styles.nav_bar_li_partners
+          )}
+          classesForA={classNames(styleNavbar.nav_bar_a)}
+          navButtons={[
+            ["Home credit", "#homecredit"],
+            ["Турбозайм", "#turbo"],
+            ["Наш проект DexBee", "#dexbee"],
+          ]}
+          changeIndex={changeIndex}
+        />
+        <PartnersContent index={index} partnersContent={partnersContent} />
+      </div>
     </section>
   );
 }

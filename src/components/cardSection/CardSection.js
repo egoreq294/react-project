@@ -1,6 +1,7 @@
 import React from "react";
 import CardField from "./CardField";
 import Title from "../Title";
+import styles from "./card.module.css";
 
 import clock from "../../assets/clock.jpg";
 import cookies from "../../assets/cookies.jpg";
@@ -34,8 +35,10 @@ const cardFieldInfos = [
 function CardSection() {
   return (
     <section id="cards">
-      <Title text="Команда Dexsys IT сегодня" />
-      <CardField cardObject={cardFieldInfos} />
+      <div className={styles.content}>
+        <Title text="Команда Dexsys IT сегодня" />
+        <CardField cardObject={cardFieldInfos} />
+      </div>
     </section>
   );
 }

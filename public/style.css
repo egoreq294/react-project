@@ -4,6 +4,5 @@ html {
 @import url(https://fonts.googleapis.com/css?family=Didact+Gothic|Comfortaa:400,700&subset=latin,cyrillic);
 body {
   font-family: "Didact Gothic", sans-serif;
-  max-width: 1440px;
-  margin: auto;
+  background: linear-gradient(#ffffff 15%, #00d4ff 80%, #083484);
 }
