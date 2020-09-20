@@ -6,7 +6,7 @@
   width: 100%;
 }
 .vacanciesNavbarElement {
-  margin: 25px 0;
+  margin: 10px auto;
 }
 .VacanciesNavbar {
   width: 30%;
@@ -35,10 +35,11 @@
     width: 100%;
   }
   .vacanciesNavbarElement {
+    width: 50%;
     padding: 0;
     text-align: center;
   }
-  .vacanciesNavbarUl {
+  .vacanciesButtonUl {
     padding: 0;
   }
   .vacanciesInfos {
@@ -49,4 +50,9 @@
 .content {
   max-width: 1440px;
   margin: auto;
+}
+@media screen and (max-width: 570px) {
+  .vacanciesNavbarElement {
+    width: 100%;
+  }
 }

@@ -1,0 +1,24 @@
+.buttonLi {
+  list-style-type: none;
+}
+.button {
+  width: 100%;
+  height: 32px;
+  outline: none;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(#0003cc, #3898ff);
+  padding: 0.4em 0.8em;
+  border-radius: 10px;
+  border: 0;
+}
+.button:hover {
+  color: white;
+  background: linear-gradient(#3898ff, #0003cc);
+  padding: 0.4em 0.8em;
+  border-radius: 10px;
+}
+.buttonUl {
+  display: block;
+  width: 100%;
+}

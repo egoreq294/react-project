@@ -2,7 +2,7 @@
   display: flex;
 }
 .nav_bar_li_partners {
-  margin: 0;
+  margin: 0 10px;
 }
 .nav_bar_ul_partners {
   justify-content: flex-end;
@@ -37,7 +37,8 @@
     padding: 0;
   }
   .nav_bar_li_partners {
-    margin: 25px 0;
+    width: 50%;
+    margin: 25px auto;
     text-align: center;
   }
   .content_div {
@@ -48,6 +49,11 @@
     padding: 0;
     width: 100%;
     justify-content: center;
+  }
+}
+@media screen and (max-width: 570px) {
+  .nav_bar_li_partners {
+    width: 100%;
   }
 }
 .content {

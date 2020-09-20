@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Title from "../Title";
 import VacanciesContent from "./VacanciesContent";
-import Navbar from "../Navbar";
-import styles1 from "../header/header.module.css";
+import buttonStyles from "../buttonGroup.module.css";
 import styles from "./vacancies.module.css";
 import classNames from "classnames";
+import ButtonGroup from "./../ButtonGroup";
 
 const DEXSYS_EMPLOYER = "1980984";
 
@@ -41,13 +41,16 @@ function VacanciesSection() {
         <Title text="Вакансии" />
         <div className={styles.vacancies}>
           <div className={styles.VacanciesNavbar}>
-            <Navbar
-              classesForUl={classNames(styles.vacanciesNavbarUl)}
+            <ButtonGroup
+              classesForUl={classNames(
+                buttonStyles.buttonUl,
+                styles.vacanciesButtonUl
+              )}
               classesForLi={classNames(
-                styles1.nav_bar_li,
+                buttonStyles.buttonLi,
                 styles.vacanciesNavbarElement
               )}
-              classesForA={classNames(styles1.nav_bar_a)}
+              classesForButton={classNames(buttonStyles.button)}
               changeIndex={handleSelect}
               navButtons={navButtonsArray}
             />

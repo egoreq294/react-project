@@ -1,14 +1,14 @@
 import React from "react";
-import Navbar from "../Navbar";
 import PartnersContent from "./PartnersContent";
 import Title from "../Title";
 import classNames from "classnames";
 import styles from "./partners.module.css";
-import styleNavbar from "../header/header.module.css";
+import buttonStyles from "../buttonGroup.module.css";
 
 import homecredit from "../../assets/homecredit.png";
 import turbozaim from "../../assets/turbozaim.jpg";
 import dexbee from "../../assets/dexbee.jpg";
+import ButtonGroup from "./../ButtonGroup";
 
 const partnersContent = [
   {
@@ -52,16 +52,16 @@ function PartnersSection() {
     <section id="partners">
       <div className={styles.content}>
         <Title text="Партнеры" />
-        <Navbar
+        <ButtonGroup
           classesForUl={classNames(
             styles.display_flex,
             styles.nav_bar_ul_partners
           )}
           classesForLi={classNames(
-            styleNavbar.nav_bar_li,
+            buttonStyles.buttonLi,
             styles.nav_bar_li_partners
           )}
-          classesForA={classNames(styleNavbar.nav_bar_a)}
+          classesForButton={classNames(buttonStyles.button)}
           navButtons={[
             ["Home credit", "#homecredit"],
             ["Турбозайм", "#turbo"],
