@@ -11,7 +11,8 @@ function VacanciesContent(props) {
   console.log(vacancy);
   return (
     <div className={styles.vacanciesInfos} id={props.index}>
-      <h2>{vacancy[0].name}</h2>
+      {vacancy[0].name !== null ? <h2>{vacancy[0].name}</h2> : null}
+
       {vacancy[0].snippet.requirement !== null ? (
         <p>
           <span className={styles.content_text_span}>Требования: </span>{" "}

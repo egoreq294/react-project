@@ -22,7 +22,6 @@ function VacanciesSection() {
     for (let key in vacancies.items) {
       if (vacancies.items[key].name === e.target.innerHTML) {
         setIndex(vacancies.items[key].id);
-        console.log(vacancies.items[key].id);
       }
     }
   }
