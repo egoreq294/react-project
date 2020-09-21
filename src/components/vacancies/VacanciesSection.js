@@ -30,10 +30,7 @@ function VacanciesSection() {
     return null;
   }
 
-  const navButtonsArray = vacancies.items.map((item) => [
-    item.name,
-    `#${item.id}`,
-  ]);
+  const navButtonsArray = vacancies.items.map((item) => item.name);
 
   return (
     <section id="vacancies">

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./header.module.css";
 import Logo from "./Logo";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import classNames from "classnames";
 
 function Header() {

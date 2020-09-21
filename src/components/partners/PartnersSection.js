@@ -62,11 +62,7 @@ function PartnersSection() {
             styles.nav_bar_li_partners
           )}
           classesForButton={classNames(buttonStyles.button)}
-          navButtons={[
-            ["Home credit", "#homecredit"],
-            ["Турбозайм", "#turbo"],
-            ["Наш проект DexBee", "#dexbee"],
-          ]}
+          navButtons={["Home credit", "Турбозайм", "Наш проект DexBee"]}
           changeIndex={changeIndex}
         />
         <PartnersContent index={index} partnersContent={partnersContent} />

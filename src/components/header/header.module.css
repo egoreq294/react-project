@@ -4,6 +4,7 @@
 .nav_bar {
   width: 50%;
   flex-wrap: wrap;
+  padding: 0 20px;
 }
 .nav_bar_a {
   text-decoration: none;
@@ -23,7 +24,6 @@
 .nav_bar_li {
   margin: auto;
   list-style-type: none;
-  padding: 0 20px;
 }
 .logo {
   width: 50%;
@@ -36,4 +36,22 @@
 .content {
   max-width: 1440px;
   margin: auto;
+}
+@media screen and (max-width: 1240px) {
+  .nav_bar {
+    display: block;
+  }
+  .nav_bar_li {
+    width: 50%;
+    margin: 23px 0 0 auto;
+  }
+  .nav_bar_a {
+    display: block;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  .nav_bar_li {
+    width: 100%;
+  }
 }

@@ -5,6 +5,8 @@ import VacanciesSection from "./components/vacancies/VacanciesSection";
 import PartnersSection from "./components/partners/PartnersSection";
 import ContactSection from "./components/contacts/ContactSection";
 
+export const ThemeContext = React.createContext("dark");
+
 function App() {
   return (
     <React.Fragment>

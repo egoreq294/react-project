@@ -22,3 +22,9 @@
   display: block;
   width: 100%;
 }
+.activeButton {
+  background: linear-gradient(#4b0082, #0003cc);
+}
+.activeButton:hover {
+  background: linear-gradient(#0003cc, #4b0082);
+}
