@@ -10,14 +10,10 @@
   text-decoration: none;
 }
 .nav_bar_a {
-  color: white;
-  background: linear-gradient(#0003cc, #3898ff);
   padding: 0.4em 0.8em;
   border-radius: 10px;
 }
 .nav_bar_a:hover {
-  color: white;
-  background: linear-gradient(#3898ff, #0003cc);
   padding: 0.4em 0.8em;
   border-radius: 10px;
 }
@@ -49,9 +45,68 @@
     display: block;
     text-align: center;
   }
+  .dark {
+    display: block;
+  }
+  .darkUl {
+    width: auto;
+  }
+  .darkLi {
+    margin: 23px 0 0 0;
+  }
 }
 @media screen and (max-width: 700px) {
   .nav_bar_li {
     width: 100%;
   }
+}
+.dark {
+  padding: 25px 0;
+}
+
+.lightButton {
+  cursor: pointer;
+  height: 32px;
+  outline: none;
+  text-decoration: none;
+  color: black;
+  background: transparent;
+  padding: 0.4em 0.8em;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 5px 0 0 20px;
+}
+.darkButton {
+  cursor: pointer;
+  height: 32px;
+  outline: none;
+  text-decoration: none;
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  padding: 0.4em 0.8em;
+  border-radius: 10px;
+  margin: 5px 0 0 20px;
+  opacity: 0.65;
+}
+
+.dark_a {
+  border: 2px solid white;
+  color: white;
+  opacity: 0.65;
+}
+.dark_a:hover {
+  border: 2px solid #2bd8ff;
+  color: #2bd8ff;
+  opacity: 0.65;
+  transition: 0.5s;
+}
+
+.light_a {
+  color: white;
+  background: linear-gradient(#0003cc, #3898ff);
+}
+.light_a:hover {
+  color: white;
+  background: linear-gradient(#3898ff, #0003cc);
 }

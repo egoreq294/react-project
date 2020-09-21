@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./title.module.css";
+import { ThemeContext } from "./../App";
+import classNames from "classnames";
 
 function Title(props) {
-  return <h1 className={styles.titleText}>{props.text}</h1>;
+  const { style } = useContext(ThemeContext);
+  return (
+    <h1
+      className={classNames(style === "dark" && styles.dark, styles.titleText)}
+    >
+      {props.text}
+    </h1>
+  );
 }
 
 export default Title;

@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Title from "../Title";
 import VacanciesContent from "./VacanciesContent";
 import buttonStyles from "../buttonGroup.module.css";
 import styles from "./vacancies.module.css";
 import classNames from "classnames";
 import ButtonGroup from "./../ButtonGroup";
+import { ThemeContext } from "./../../App";
 
 const DEXSYS_EMPLOYER = "1980984";
 
 function VacanciesSection() {
+  const { style } = useContext(ThemeContext);
   const [vacancies, setVacancies] = useState();
   const [selectedVacancy, setSelectedVacancy] = useState();
 
@@ -47,7 +49,12 @@ function VacanciesSection() {
                 buttonStyles.buttonLi,
                 styles.vacanciesNavbarElement
               )}
-              classesForButton={classNames(buttonStyles.button)}
+              classesForButton={classNames(
+                style === "light"
+                  ? buttonStyles.lightButton
+                  : buttonStyles.darkButton,
+                buttonStyles.button
+              )}
               changeIndex={handleSelect}
               navButtons={navButtonsArray}
             />

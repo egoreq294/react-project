@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./partners.module.css";
+import { ThemeContext } from "./../../App";
+import classNames from "classnames";
 
 function PartnersContent(props) {
+  const { style } = useContext(ThemeContext);
   return (
     <div className={styles.content_div}>
       <img
@@ -15,7 +18,12 @@ function PartnersContent(props) {
         }
         alt={props.partnersContent[props.index].partner}
       />
-      <p className={styles.partners_text}>
+      <p
+        className={classNames(
+          style === "dark" && styles.darkText,
+          styles.partners_text
+        )}
+      >
         {props.partnersContent[props.index].description}
       </p>
     </div>

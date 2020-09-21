@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PartnersContent from "./PartnersContent";
 import Title from "../Title";
 import classNames from "classnames";
@@ -9,6 +9,7 @@ import homecredit from "../../assets/homecredit.png";
 import turbozaim from "../../assets/turbozaim.jpg";
 import dexbee from "../../assets/dexbee.jpg";
 import ButtonGroup from "./../ButtonGroup";
+import { ThemeContext } from "./../../App";
 
 const partnersContent = [
   {
@@ -38,6 +39,7 @@ const partnersContent = [
 ];
 
 function PartnersSection() {
+  const { style } = useContext(ThemeContext);
   const [index, setIndex] = React.useState(0);
   function changeIndex(e) {
     partnersContent.find((item) => {
@@ -61,7 +63,12 @@ function PartnersSection() {
             buttonStyles.buttonLi,
             styles.nav_bar_li_partners
           )}
-          classesForButton={classNames(buttonStyles.button)}
+          classesForButton={classNames(
+            style === "light"
+              ? buttonStyles.lightButton
+              : buttonStyles.darkButton,
+            buttonStyles.button
+          )}
           navButtons={["Home credit", "Турбозайм", "Наш проект DexBee"]}
           changeIndex={changeIndex}
         />

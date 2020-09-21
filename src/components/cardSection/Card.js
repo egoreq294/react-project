@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./card.module.css";
+import { ThemeContext } from "./../../App";
+import classnames from "classnames";
 
 function Card(props) {
+  const { style } = useContext(ThemeContext);
   return (
-    <div className={styles.card}>
+    <div
+      className={classnames(style === "dark" && styles.darkCard, styles.card)}
+    >
       <img
         className={styles.cardImg}
         src={
@@ -13,7 +18,14 @@ function Card(props) {
         }
         alt={props.cardTitle}
       />
-      <h2 className={styles.cardText}>{props.cardTitle}</h2>
+      <h2
+        className={classnames(
+          style === "dark" && styles.darkText,
+          styles.cardText
+        )}
+      >
+        {props.cardTitle}
+      </h2>
     </div>
   );
 }

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import classNames from "classnames";
 import styles from "./buttonGroup.module.css";
+import { ThemeContext } from "./../App";
 
 function ButtonGroup(props) {
+  const { style } = useContext(ThemeContext);
   const [activeButton, setActiveButton] = useState(props.navButtons[0]);
   function doButtonActive(e) {
     setActiveButton(e.target.innerHTML);
@@ -18,7 +20,11 @@ function ButtonGroup(props) {
             }}
             className={classNames(
               props.classesForButton,
-              activeButton === item ? styles.activeButton : null
+              activeButton === item
+                ? style === "light"
+                  ? styles.activeLightButton
+                  : styles.activeDarkButton
+                : null
             )}
           >
             {item}

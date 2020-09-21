@@ -34,8 +34,6 @@
 }
 
 .btn {
-  color: white;
-  background: linear-gradient(#0003cc, #3898ff);
   padding: 0.4em 0.8em;
   border-radius: 10px;
   margin-left: 45px;
@@ -44,8 +42,6 @@
   margin-bottom: 25px;
 }
 .btn:hover {
-  color: white;
-  background: linear-gradient(#3898ff, #0003cc);
   padding: 0.4em 0.8em;
   border-radius: 10px;
 }
@@ -55,7 +51,7 @@
   font-size: 1.5em;
 }
 .contacts_info {
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 @media screen and (max-width: 768px) {
@@ -80,4 +76,33 @@
   .a {
     font-size: 1em;
   }
+}
+.darkText {
+  color: #fff;
+  opacity: 0.65;
+}
+.darkForm {
+  opacity: 0.65;
+}
+.lightBtn {
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(#0003cc, #3898ff);
+}
+.lightBtn:hover {
+  color: white;
+  background: linear-gradient(#3898ff, #0003cc);
+}
+.darkBtn {
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  opacity: 0.65;
+}
+.darkBtn:hover {
+  border: 2px solid #2bd8ff;
+  color: #2bd8ff;
+  opacity: 0.65;
+  transition: 0.5s;
 }

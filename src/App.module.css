@@ -1,0 +1,6 @@
+.lightBackground {
+  background: linear-gradient(#ffffff 15%, #00d4ff 80%, #083484);
+}
+.darkBackground {
+  background: linear-gradient(#28313b, #485461);
+}

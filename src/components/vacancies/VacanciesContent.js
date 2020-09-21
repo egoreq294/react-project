@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./vacancies.module.css";
+import { ThemeContext } from "./../../App";
+import classNames from "classnames";
 
 function VacanciesContent({ vacancy }) {
+  const { style } = useContext(ThemeContext);
   return (
-    <div className={styles.vacanciesInfos}>
+    <div
+      className={classNames(
+        style === "dark" && styles.darkText,
+        styles.vacanciesInfos
+      )}
+    >
       <h2>{vacancy.name}</h2>
       {vacancy.snippet.requirement && (
         <p>
@@ -19,7 +27,13 @@ function VacanciesContent({ vacancy }) {
       )}
       {vacancy.alternate_url && (
         <p>
-          <a className={styles.middle} href={vacancy.alternate_url}>
+          <a
+            className={classNames(
+              style === "dark" && styles.darkA,
+              styles.middle
+            )}
+            href={vacancy.alternate_url}
+          >
             Ссылка на вакансию
           </a>
         </p>
