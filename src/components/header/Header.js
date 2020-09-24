@@ -7,7 +7,6 @@ import { ThemeContext } from "./../../App";
 
 function Header(props) {
   const { style } = useContext(ThemeContext);
-  console.log(style);
   return (
     <header id="header">
       <div

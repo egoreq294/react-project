@@ -22,7 +22,6 @@ function VacanciesSection() {
         setSelectedVacancy(responseObject?.items[0]);
       });
   }, []);
-
   function handleSelect(element) {
     const vacancyName = element.target.innerHTML;
     setSelectedVacancy(vacancies.items.find((v) => v.name === vacancyName));
