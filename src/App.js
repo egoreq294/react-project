@@ -11,69 +11,67 @@ export const ThemeContext = React.createContext({
   changeTheme: () => {},
 });
 function App() {
-  const [style, setStyle] = useState("dark");
   function changeStyle() {
     setStyle((style) => (style === "light" ? "dark" : "light"));
   }
-  const [coords, setCoords] = useState({});
-  const [sunrise, setSunrise] = useState({});
+  function changeStyleByTime(sunrise) {
+    if (Object.keys(sunrise).length) {
+      if (sunrise.results !== undefined && sunrise.results !== "") {
+        let date = new Date();
+        let sunsetTime = new Date(
+          date.getFullYear() +
+            ", " +
+            Number(date.getMonth() + 1) +
+            ", " +
+            date.getDate() +
+            ", " +
+            sunrise.results.sunset +
+            " UTC"
+        );
+        let sunriseTime = new Date(
+          date.getFullYear() +
+            ", " +
+            Number(date.getMonth() + 1) +
+            ", " +
+            date.getDate() +
+            ", " +
+            sunrise.results.sunrise +
+            " UTC"
+        );
+        if (sunriseTime < date && sunsetTime > date) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    } else {
+      return true;
+    }
+  }
+  const [style, setStyle] = useState("light");
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setCoords({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        });
-        fetch(
-          `https://api.sunrise-sunset.org/json?lat=${coords.latitude}&lng=${coords.longitude}`
+      async (position) => {
+        let lat = position.coords.latitude;
+        let long = position.coords.longitude;
+        await fetch(
+          `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}`
         )
           .then((response) => response.json())
           .then((responseObject) => {
-            setSunrise(responseObject);
-          });
-
-        if (Object.keys(coords).length) {
-          if (sunrise.results !== undefined && sunrise.results !== "") {
-            let date = new Date();
-            let sunsetTime = new Date(
-              date.getFullYear() +
-                ", " +
-                Number(date.getMonth() + 1) +
-                ", " +
-                date.getDate() +
-                ", " +
-                sunrise.results.sunset +
-                " UTC"
-            );
-            let sunriseTime = new Date(
-              date.getFullYear() +
-                ", " +
-                Number(date.getMonth() + 1) +
-                ", " +
-                date.getDate() +
-                ", " +
-                sunrise.results.sunrise +
-                " UTC"
-            );
-            if (sunriseTime < date && sunsetTime > date) {
+            if (changeStyleByTime(responseObject)) {
               setStyle("light");
-              console.log("hello1");
             } else {
               setStyle("dark");
-              console.log("hello3");
             }
-          }
-        } else {
-          setStyle("light");
-          console.log("hello2");
-        }
+          });
       },
       () => {
         console.log("err");
         return null;
       }
     );
-  }, [coords]);
+  }, []); // eslint-disable-next-line
 
   return (
     <ThemeContext.Provider value={{ style, changeStyle }}>
@@ -83,13 +81,9 @@ function App() {
         }
       >
         <Header />
-
         <CardSection />
-
         <VacanciesSection />
-
         <PartnersSection />
-
         <ContactSection />
       </div>
     </ThemeContext.Provider>
