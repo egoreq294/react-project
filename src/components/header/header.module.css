@@ -103,6 +103,7 @@
 }
 
 .light_a {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   color: white;
   background: linear-gradient(#0003cc, #3898ff);
 }

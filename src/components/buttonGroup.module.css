@@ -10,6 +10,7 @@
   padding: 0.4em 0.8em;
   border-radius: 10px;
   border: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .button:hover {
   padding: 0.4em 0.8em;
