@@ -11,44 +11,36 @@ export const ThemeContext = React.createContext({
   changeTheme: () => {},
 });
 function App() {
+  const lightTheme = "light";
+  const darkTheme = "dark";
+  const [style, setStyle] = useState(lightTheme);
+
   function changeStyle() {
-    setStyle((style) => (style === "light" ? "dark" : "light"));
+    setStyle((style) => (style === lightTheme ? darkTheme : lightTheme));
   }
-  function changeStyleByTime(sunrise) {
-    if (Object.keys(sunrise).length) {
-      if (sunrise.results !== undefined && sunrise.results !== "") {
-        let date = new Date();
-        let sunsetTime = new Date(
-          date.getFullYear() +
-            ", " +
-            Number(date.getMonth() + 1) +
-            ", " +
-            date.getDate() +
-            ", " +
-            sunrise.results.sunset +
-            " UTC"
-        );
-        let sunriseTime = new Date(
-          date.getFullYear() +
-            ", " +
-            Number(date.getMonth() + 1) +
-            ", " +
-            date.getDate() +
-            ", " +
-            sunrise.results.sunrise +
-            " UTC"
-        );
-        if (sunriseTime < date && sunsetTime > date) {
-          return true;
-        } else {
-          return false;
-        }
+
+  function createDate(date, time) {
+    const year = date.getFullYear();
+    const month = Number(date.getMonth() + 1);
+    const day = date.getDate();
+    return new Date(`${year}, ${month}, ${day}, ${time}, UTC`);
+  }
+
+  function getStyleByTime(sunriseSunsetResponse) {
+    if (sunriseSunsetResponse.results) {
+      let date = new Date();
+      let sunsetTime = createDate(date, sunriseSunsetResponse.results.sunset);
+      let sunriseTime = createDate(date, sunriseSunsetResponse.results.sunrise);
+      if (sunriseTime < date && sunsetTime > date) {
+        return lightTheme;
+      } else {
+        return darkTheme;
       }
     } else {
-      return true;
+      return lightTheme;
     }
   }
-  const [style, setStyle] = useState("light");
+  /* eslint-disable */
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
@@ -59,10 +51,9 @@ function App() {
         )
           .then((response) => response.json())
           .then((responseObject) => {
-            if (changeStyleByTime(responseObject)) {
-              setStyle("light");
-            } else {
-              setStyle("dark");
+            const style = getStyleByTime(responseObject);
+            if (style) {
+              setStyle(style);
             }
           });
       },
@@ -71,13 +62,13 @@ function App() {
         return null;
       }
     );
-  }, []); // eslint-disable-next-line
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ style, changeStyle }}>
       <div
         className={
-          style === "light" ? styles.lightBackground : styles.darkBackground
+          style === lightTheme ? styles.lightBackground : styles.darkBackground
         }
       >
         <Header />

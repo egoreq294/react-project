@@ -27,9 +27,3 @@ it("renders with title text", () => {
   });
   expect(container.textContent).toBe("Hello");
 });
-it("renders with or without a title", () => {
-  act(() => {
-    render(<Title text="World" />, container);
-  });
-  expect(container.textContent).toBe("World");
-});

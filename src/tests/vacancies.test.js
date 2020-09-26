@@ -15,23 +15,23 @@ afterEach(() => {
   container = null;
 });
 
-it("renders fake vacancy", async () => {
-  const fakeVacanciesList = {
-    items: [
-      {
-        name: "Пират",
-        snippet: {
-          requirement: "Высшее образование. ",
-          responsibility: "Анализ работы продуктивных систем",
-        },
-        alternate_url: "vk.com",
+const VALID_VACANCIES_RESPONSE = {
+  items: [
+    {
+      name: "Пират",
+      snippet: {
+        requirement: "Высшее образование. ",
+        responsibility: "Анализ работы продуктивных систем",
       },
-    ],
-  };
+      alternate_url: "vk.com",
+    },
+  ],
+};
 
+it("renders fake vacancy", async () => {
   jest.spyOn(global, "fetch").mockImplementation(() =>
     Promise.resolve({
-      json: () => Promise.resolve(fakeVacanciesList),
+      json: () => Promise.resolve(VALID_VACANCIES_RESPONSE),
     })
   );
 
@@ -39,18 +39,22 @@ it("renders fake vacancy", async () => {
   await act(async () => {
     render(<VacanciesSection />, container);
   });
+  const firstVacancy = VALID_VACANCIES_RESPONSE.items[0];
+  const vacanciesInfo = container.querySelector(".vacanciesInfos");
 
-  expect(
-    container.querySelector(".vacanciesInfos").childNodes[0].textContent
-  ).toBe(fakeVacanciesList.items[0].name);
-  expect(
-    container.querySelector(".vacanciesInfos").childNodes[1].lastChild
-      .textContent
-  ).toBe(fakeVacanciesList.items[0].snippet.requirement);
-  expect(
-    container.querySelector(".vacanciesInfos").childNodes[2].lastChild
-      .textContent
-  ).toBe(fakeVacanciesList.items[0].snippet.responsibility);
+  const name = Array.from(container.querySelectorAll("h2")).find((el) =>
+    el.textContent.includes(firstVacancy.name)
+  );
+  expect(name).not.toBeUndefined();
+  const req = Array.from(container.querySelectorAll("p")).find((el) =>
+    el.textContent.includes(firstVacancy.snippet.requirement)
+  );
+  expect(req).not.toBeUndefined();
+  const resp = Array.from(container.querySelectorAll("p")).find((el) =>
+    el.textContent.includes(firstVacancy.snippet.responsibility)
+  );
+  expect(resp).not.toBeUndefined();
+
   // выключаем фиктивный fetch, чтобы убедиться, что тесты полностью изолированы
   global.fetch.mockRestore();
 });
