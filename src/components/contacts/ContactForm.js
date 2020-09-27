@@ -17,8 +17,7 @@ function ContactForm(props) {
     e.preventDefault();
     if (
       document.querySelector("#form_email").value &&
-      document.querySelector("#form_name").value &&
-      document.querySelector("#form_description").value
+      document.querySelector("#form_name").value
     ) {
       console.log("nice");
       emailjs
@@ -33,6 +32,7 @@ function ContactForm(props) {
             console.log(result.text);
             document.querySelector("#form_name").value = "";
             document.querySelector("#form_email").value = "";
+            document.querySelector("#form_link").value = "";
             document.querySelector("#form_description").value = "";
           },
           (error) => {
@@ -54,7 +54,7 @@ function ContactForm(props) {
             name="user_name"
             className={styles.input_form}
             id="form_name"
-            placeholder="Имя"
+            placeholder="Name*"
             required=""
           ></input>
         </div>
@@ -65,7 +65,17 @@ function ContactForm(props) {
             name="user_email"
             className={styles.input_form}
             aria-describedby="emailHelp"
-            placeholder="Email"
+            placeholder="E-mail*"
+            required=""
+          ></input>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="form_link"
+            name="user_link"
+            className={styles.input_form}
+            placeholder="Your CV link"
             required=""
           ></input>
         </div>
@@ -79,7 +89,7 @@ function ContactForm(props) {
             )}
             cols="30"
             rows="10"
-            placeholder="Describe your questions in detail..."
+            placeholder="Write your questions"
             required=""
           ></textarea>
         </div>

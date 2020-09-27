@@ -9,7 +9,7 @@
 }
 .content_div {
   display: flex;
-  margin: 20px;
+  padding: 50px 20px;
 }
 .partners_img {
   max-width: 100%;
