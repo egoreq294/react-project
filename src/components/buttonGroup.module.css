@@ -2,19 +2,22 @@
   list-style-type: none;
 }
 .button {
+  height: auto !important;
+  display: block;
+  margin: auto;
   cursor: pointer;
-  min-width: 110px;
-  width: 100%;
+  min-width: 165px;
+  width: 80%;
   height: 32px;
   outline: none;
   text-decoration: none;
-  padding: 0.6em 0.9em;
   border-radius: 5px;
   border: 0;
 }
 .buttonUl {
   display: block;
   width: 100%;
+  padding: 0;
 }
 
 .lightButton {
@@ -26,9 +29,13 @@
   background: #1d49aa;
 }
 .activeLightButton {
+  outline: none;
+  text-decoration: none;
+  border: 0;
   box-shadow: 0 0 0 4px #cbd6ee;
 }
-.activeLightButton:hover {
+.lightButton:focus {
+  outline: none;
 }
 .darkButton {
   background: transparent;
@@ -40,5 +47,10 @@
   border: 2px solid #2bd8ff;
   color: #2bd8ff;
   opacity: 0.65;
-  transition: 0.5s;
+}
+
+@media screen and (max-width: 1120px) {
+  .button {
+    width: 90%;
+  }
 }

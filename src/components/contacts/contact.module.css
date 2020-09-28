@@ -69,7 +69,15 @@
     width: 90%;
     margin: 10px auto;
   }
+  .btn {
+    padding: 0;
+  }
+  .contacts_info {
+    margin: 0;
+    padding: 25px 0 25px 0;
+  }
 }
+
 @media screen and (max-width: 370px) {
   .a {
     font-size: 1em;

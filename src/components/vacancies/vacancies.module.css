@@ -9,13 +9,13 @@
   margin: 10px auto;
 }
 .VacanciesNavbar {
-  width: 30%;
+  width: 40%;
 }
 .VacanciesContent {
-  width: 70%;
+  width: 60%;
 }
 .vacanciesInfos {
-  width: 70%;
+  width: 90%;
   margin: auto;
 }
 .content_text_span {
@@ -25,7 +25,7 @@
   text-decoration: none;
   color: black;
 }
-@media screen and (max-width: 965px) {
+@media screen and (max-width: 1024px) {
   .vacancies {
     display: block;
   }
@@ -52,7 +52,7 @@
   max-width: 1440px;
   margin: auto;
 }
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 698px) {
   .vacanciesNavbarElement {
     width: 90%;
   }
