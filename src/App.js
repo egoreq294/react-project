@@ -55,7 +55,8 @@ function App() {
             if (style) {
               setStyle(style);
             }
-          });
+          })
+          .catch((err) => console.log(err));
       },
       () => {
         console.log("err");

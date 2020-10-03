@@ -3,12 +3,12 @@
 }
 .button {
   height: auto !important;
+  min-height: 32px;
   display: block;
   margin: auto;
   cursor: pointer;
   min-width: 165px;
   width: 80%;
-  height: 32px;
   outline: none;
   text-decoration: none;
   border-radius: 5px;

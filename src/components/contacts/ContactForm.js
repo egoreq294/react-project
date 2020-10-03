@@ -127,7 +127,7 @@ function ContactForm(props) {
           )}
         />
       </form>
-
+      {/* Не успел сделать модалку по номральному? по хорошему добавить одну и менять содержимое*/}
       <Modal show={showSuccessModal} onHide={handleClose}>
         <Modal.Header style={style === "dark" ? DarkBackground : undefined}>
           <Modal.Title style={style === "dark" ? DarkText : undefined}>
